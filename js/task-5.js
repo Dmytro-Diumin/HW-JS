@@ -462,8 +462,9 @@
 // const arr = [1,2,3,5,7,9,10];
 
 // const result = arr.toSorted((right, left) => {
+//     console.log(left, right);
 //   return left - right;
-// console.log(left, right);
+
 // });
 
 // console.log(result);
