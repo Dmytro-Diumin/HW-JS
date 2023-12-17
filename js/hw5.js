@@ -49,7 +49,7 @@
 
 
 // const getUsersWithFriend = (users, friendName) => {
-//     const myFriends = users.filter((user) => user.friends > friendName);
+//     const myFriends = users.filter(({friends}) => friends.includes(friendName));
 //     return myFriends;
 // };
 
@@ -84,89 +84,86 @@
 //   }
 // ];
 
-//   console.table(getUsersWithFriend(allUsers, "Briana Decker")); 
-  // [
-  //   {
-  //     name: "Sharlene Bush",
-  //     friends: ["Briana Decker", "Sharron Pace"]
-  //   },
-  //   {
-  //     name: "Sheree Anthony",
-  //     friends: ["Goldie Gentry", "Briana Decker"]
-  //   }
-  // ]
-  
-//   console.log(getUsersWithFriend(allUsers, "Goldie Gentry"));
-  // [
-  //   {
-  //     name: "Elma Head",
-  //     friends: ["Goldie Gentry", "Aisha Tran"]
-  //   },
-  //   {
-  //     name: "Sheree Anthony",
-  //     friends: ["Goldie Gentry", "Briana Decker"]
-  //   }
-  // ]
-  
-//   console.log(getUsersWithFriend(allUsers, "Adrian Cross" )); // []
+// console.log(getUsersWithFriend(allUsers, "Briana Decker")); 
+// // [
+// //   {
+// //     name: "Sharlene Bush",
+// //     friends: ["Briana Decker", "Sharron Pace"]
+// //   },
+// //   {
+// //     name: "Sheree Anthony",
+// //     friends: ["Goldie Gentry", "Briana Decker"]
+// //   }
+// // ]
+
+// console.log(getUsersWithFriend(allUsers, "Goldie Gentry"));
+// // [
+// //   {
+// //     name: "Elma Head",
+// //     friends: ["Goldie Gentry", "Aisha Tran"]
+// //   },
+// //   {
+// //     name: "Sheree Anthony",
+// //     friends: ["Goldie Gentry", "Briana Decker"]
+// //   }
+// // ]
+
+// console.log(getUsersWithFriend(allUsers, "Adrian Cross" )); // []
 
 
 //=====================================================================================
 // const arr = [1,2,3,5,7,9,10];
 
-// const result = arr.toSorted((right, left) => {
+// const result = arr.sort((a, b) => b - a );
 //     // console.log(left, right);
-//   return left - right;
 
-// });
-
-// console.log(result);
+// console.table(result);
 
 
 
-// const sortByDescendingFriendCount = (users) => { 
-//   const userSorted = users.toSorted();
-
-// }
-// console.log(
-//     sortByDescendingFriendCount([
-//       {
-//         name: "Moore Hensley",
-//         friends: ["Sharron Pace"],
-//         gender: "male"
-//       },
-//       {
-//         name: "Sharlene Bush",
-//         friends: ["Briana Decker", "Sharron Pace"],
-//         gender: "female"
-//       },
-//       {
-//         name: "Ross Vazquez",
-//         friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
-//         gender: "male"
-//       },
-//       {
-//         name: "Elma Head",
-//         friends: ["Goldie Gentry", "Aisha Tran"],
-//         gender: "female"
-//       },
-//       {
-//         name: "Carey Barr",
-//         friends: ["Jordan Sampson", "Eddie Strong"],
-//         gender: "male"
-//       },
-//       {
-//         name: "Blackburn Dotson",
-//         friends: ["Jacklyn Lucas", "Linda Chapman"],
-//         gender: "male"
-//       },
-//       {
-//         name: "Sheree Anthony",
-//         friends: ["Goldie Gentry", "Briana Decker"],
-//         gender: "female"
-//       }
-//     ])
-//   );
+const sortByDescendingFriendCount = (users) => { 
+  const userSorted = users.toSorted((a, b) => b.friends.length - a.friends.length);
+return userSorted;
+}
+console.log(
+    sortByDescendingFriendCount([
+      {
+        name: "Moore Hensley",
+        friends: ["Sharron Pace"],
+        gender: "male"
+      },
+      {
+        name: "Sharlene Bush",
+        friends: ["Briana Decker", "Sharron Pace"],
+        gender: "female"
+      },
+      {
+        name: "Ross Vazquez",
+        friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+        gender: "male"
+      },
+      {
+        name: "Elma Head",
+        friends: ["Goldie Gentry", "Aisha Tran"],
+        gender: "female"
+      },
+      {
+        name: "Carey Barr",
+        friends: ["Jordan Sampson", "Eddie Strong"],
+        gender: "male"
+      },
+      {
+        name: "Blackburn Dotson",
+        friends: ["Jacklyn Lucas", "Linda Chapman"],
+        gender: "male"
+      },
+      {
+        name: "Sheree Anthony",
+        friends: ["Goldie Gentry", "Briana Decker"],
+        gender: "female"
+      }
+    ])
+  );
   // [
   //   {
   //     name: "Ross Vazquez",
@@ -224,58 +221,58 @@
 
 
 
-const getTotalBalanceByGender = (users, gender) => {
+// const getTotalBalanceByGender = (users, gender) => {
   
-  const totalBalance = users
-  .filter(user => user.gender == gender)
-  .reduce((acc, user) => {
-    if(user.balance) {
-    acc += user.balance;
-  }
-  return acc;// return `${acc}:${gender}`;
-  }, 0);
+//   const totalBalance = users
+//   .filter(user => user.gender == gender)
+//   .reduce((acc, user) => {
+//     if(user.balance) {
+//     acc += user.balance;
+//   }
+//   return acc;
+//   }, 0);
 
-  return totalBalance;
-};
+//   return totalBalance;
+// };
 
-const allUsers = [
-    {
-    name: "Moore Hensley",
-    gender: "male",
-    balance: 2811
-  },
-  {
-    name: "Sharlene Bush",
-    gender: "female",
-    balance: 3821
-  },
-  {
-    name: "Ross Vazquez",
-    gender: "male",
-    balance: 3793
-  },
-  {
-    name: "Elma Head",
-    gender: "female",
-    balance: 2278
-  },
-  {
-    name: "Carey Barr",
-    gender: "male",
-    balance: 3951
-  },
-  {
-    name: "Blackburn Dotson",
-    gender: "male",
-    balance: 1498
-  },
-  {
-    name: "Sheree Anthony",
-    gender: "female",
-    balance: 2764
-  }
-];
+// const allUsers = [
+//     {
+//     name: "Moore Hensley",
+//     gender: "male",
+//     balance: 2811
+//   },
+//   {
+//     name: "Sharlene Bush",
+//     gender: "female",
+//     balance: 3821
+//   },
+//   {
+//     name: "Ross Vazquez",
+//     gender: "male",
+//     balance: 3793
+//   },
+//   {
+//     name: "Elma Head",
+//     gender: "female",
+//     balance: 2278
+//   },
+//   {
+//     name: "Carey Barr",
+//     gender: "male",
+//     balance: 3951
+//   },
+//   {
+//     name: "Blackburn Dotson",
+//     gender: "male",
+//     balance: 1498
+//   },
+//   {
+//     name: "Sheree Anthony",
+//     gender: "female",
+//     balance: 2764
+//   }
+// ];
 
-console.log(getTotalBalanceByGender(allUsers, "male")); // 12053
+// console.log(getTotalBalanceByGender(allUsers, "male")); // 12053
 
-console.log(getTotalBalanceByGender(allUsers, "female")); // 8863
+// console.log(getTotalBalanceByGender(allUsers, "female")); // 8863
