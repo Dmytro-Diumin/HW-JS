@@ -620,33 +620,35 @@
 // Задача 2
 // ============================================
 
-class Storage {
-    #items;
+// class Storage {
+//     #items;
 
-    constructor(items) {
-        this.#items = items;
-    }
+//     constructor(items) {
+//         this.#items = items;
+//     }
 
-    getItems() {
-    return this.#items;
-    }
-    addItem(newItem) {
-      this.#items.push(newItem);
-    }
-    removeItem(itemToRemove) {
-     this.#items.slice(0,itemToRemove);
-     console.log(itemToRemove);
+//     getItems() {
+//     return this.#items;
+//     }
+//     addItem(newItem) {
+//       this.#items.push(newItem);
+//     }
+//     removeItem(itemToRemove) {
+//      const itemIndex = this.#items.indexOf(itemToRemove);
+//      if(itemIndex !== -1) {
+//       this.#items.splice(itemIndex, 1);
+//      }
      
-    }
+//     }
 
-};
+// };
 
-const storage = new Storage(["Nanitoids", "Prolonger", "Antigravitator"]);
-console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator"]
-storage.addItem("Droid");
-console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator", "Droid"]
-storage.removeItem("Prolonger");
-console.log(storage.getItems()); // ["Nanitoids", "Antigravitator", "Droid"]
+// const storage = new Storage(["Nanitoids", "Prolonger", "Antigravitator"]);
+// console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator"]
+// storage.addItem("Droid");
+// console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator", "Droid"]
+// storage.removeItem("Prolonger");
+// console.log(storage.getItems()); // ["Nanitoids", "Antigravitator", "Droid"]
 
 
 // ===========================
@@ -687,10 +689,29 @@ console.log(storage.getItems()); // ["Nanitoids", "Antigravitator", "Droid"]
 
 
 
+// const heading = document.createElement("h1");
+// headding.classList.add("title");
+// heading.textContent = "This is a heading";
+// console.log(heading); // <h1 class="title">This is a heading</h1>
+
+// const image = document.createElement("img");
+// image.src = "<https://picsum.photos/id/11/320/240>";
+// image.alt = "Nature";
+// console.log(image); // <img src="<https://picsum.photos/id/11/320/240>" alt="Nature" />
 
 
+const technologies = ["HTML", "CSS", "JavaScript", "React", "Node"];
+const list = document.querySelector(".list");
 
+const markup = technologies
+  .map((technology) => `<li class="list-item">${technology}</li>`)
+  .join("");
 
+// Check the console, you'll see a single string with HTML tags
+console.log(markup);
+
+// Adding all the markup in one operation
+list.innerHTML = markup;
 
 
 
