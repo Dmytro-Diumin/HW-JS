@@ -699,51 +699,53 @@
 // image.alt = "Nature";
 // console.log(image); // <img src="<https://picsum.photos/id/11/320/240>" alt="Nature" />
 
-
-const list = document.querySelector(".list");
-
-const newTechnologies = ["React", "TypeScript", "Node.js"];
-const markup = newTechnologies
-  .map((technology) => `<li class="list-item new">${technology}</li>`)
-  .join("");
-
-list.insertAdjacentHTML("beforeend", markup);
-list.insertAdjacentHTML("beforebegin", "<h2>Popular technologies</h2>");
+// ========================================================================================================
 
 
-const singleBtn = document.querySelector("#single");
+// const list = document.querySelector(".list");
 
-const handleClick = () => {
-  console.log("click event listener callback");
-};
+// const newTechnologies = ["React", "TypeScript", "Node.js"];
+// const markup = newTechnologies
+//   .map((technology) => `<li class="list-item new">${technology}</li>`)
+//   .join("");
 
-singleBtn.addEventListener("click", handleClick);
-
-// ===============================================
-const multiBtn = document.querySelector("#multiple");
-
-const firstCallback = () => {
-  console.log("First callback!");
-};
-const secondCallback = () => {
-  console.log("Second callback!");
-};
-const thirdCallback = () => {
-  console.log("Third callback!");
-};
-
-multiBtn.addEventListener("click", firstCallback);
-multiBtn.addEventListener("click", secondCallback);
-multiBtn.addEventListener("click", thirdCallback);
+// list.insertAdjacentHTML("beforeend", markup);
+// list.insertAdjacentHTML("beforebegin", "<h2>Popular technologies</h2>");
 
 
-const article = document.querySelector(".article");
-const htmlString = `<p class="article-text">Nullam quis ante. Vestibulum dapibus nunc ac augue. In consectetuer turpis ut velit.</p>
-   <a class="link" href="#">Read more...</a>`;
+// const singleBtn = document.querySelector("#single");
 
-// Replace += with = operator. See the difference? 
-// Article title is lost because we overwrite element content.
-article.innerHTML += htmlString;
+// const handleClick = () => {
+//   console.log("click event listener callback");
+// };
+
+// singleBtn.addEventListener("click", handleClick);
+
+// // ===============================================
+// const multiBtn = document.querySelector("#multiple");
+
+// const firstCallback = () => {
+//   console.log("First callback!");
+// };
+// const secondCallback = () => {
+//   console.log("Second callback!");
+// };
+// const thirdCallback = () => {
+//   console.log("Third callback!");
+// };
+
+// multiBtn.addEventListener("click", firstCallback);
+// multiBtn.addEventListener("click", secondCallback);
+// multiBtn.addEventListener("click", thirdCallback);
+
+
+// const article = document.querySelector(".article");
+// const htmlString = `<p class="article-text">Nullam quis ante. Vestibulum dapibus nunc ac augue. In consectetuer turpis ut velit.</p>
+//    <a class="link" href="#">Read more...</a>`;
+
+// // Replace += with = operator. See the difference? 
+// // Article title is lost because we overwrite element content.
+// article.innerHTML += htmlString;
 
 
 
