@@ -700,18 +700,50 @@
 // console.log(image); // <img src="<https://picsum.photos/id/11/320/240>" alt="Nature" />
 
 
-const technologies = ["HTML", "CSS", "JavaScript", "React", "Node"];
 const list = document.querySelector(".list");
 
-const markup = technologies
-  .map((technology) => `<li class="list-item">${technology}</li>`)
+const newTechnologies = ["React", "TypeScript", "Node.js"];
+const markup = newTechnologies
+  .map((technology) => `<li class="list-item new">${technology}</li>`)
   .join("");
 
-// Check the console, you'll see a single string with HTML tags
-console.log(markup);
+list.insertAdjacentHTML("beforeend", markup);
+list.insertAdjacentHTML("beforebegin", "<h2>Popular technologies</h2>");
 
-// Adding all the markup in one operation
-list.innerHTML = markup;
+
+const singleBtn = document.querySelector("#single");
+
+const handleClick = () => {
+  console.log("click event listener callback");
+};
+
+singleBtn.addEventListener("click", handleClick);
+
+// ===============================================
+const multiBtn = document.querySelector("#multiple");
+
+const firstCallback = () => {
+  console.log("First callback!");
+};
+const secondCallback = () => {
+  console.log("Second callback!");
+};
+const thirdCallback = () => {
+  console.log("Third callback!");
+};
+
+multiBtn.addEventListener("click", firstCallback);
+multiBtn.addEventListener("click", secondCallback);
+multiBtn.addEventListener("click", thirdCallback);
+
+
+const article = document.querySelector(".article");
+const htmlString = `<p class="article-text">Nullam quis ante. Vestibulum dapibus nunc ac augue. In consectetuer turpis ut velit.</p>
+   <a class="link" href="#">Read more...</a>`;
+
+// Replace += with = operator. See the difference? 
+// Article title is lost because we overwrite element content.
+article.innerHTML += htmlString;
 
 
 
