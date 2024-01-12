@@ -47,10 +47,24 @@ body {
   margin-bottom: 8px;
 }
 
+.btn {
+  border-radius: 10px;
+  border-color: crimson;
+  background-color: burlywood;
+  padding: 5px;
+
+}
+
 .article {
   max-width: 320px;
 }
 
 .article-text {
-  color: tomato;
+  color: red;
+  background-color: black;
+}
+
+.article-text1 {
+  color: white;
+  background-color: black;
 }
