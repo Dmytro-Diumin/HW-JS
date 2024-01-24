@@ -519,15 +519,44 @@ const instance = basicLightbox.create(`
 // можна відразу деструктуризувати цей об'єкт, щоб витягти з нього значення.
 
 
-function getSlice(array, value) {
- const index = array.indexOf(value);
- if (index != -1) {
- }
- return index;
+
+
+// Тема 9 JSON    ======================
+
+// ========================================
+// JSON.stringify()// заархівувати
+// JSON.parse()// розархівувати
+
+// const data = 'Hello';
+
+// const zip = JSON.stringify(data);
+
+// console.log(zip);
+
+// ==================================
+
+console.log('START');
+
+try {
+	const str = prompt('Enter your json:');
+	const data = JSON.parse(str);
+	console.log(data);
+} catch {
+	console.log('ERROR');
 }
 
+console.log('END');
 
-console.log(getSlice(["Mango", "Poly", "Ajax"], "Poly"));//повертає ["Mango", "Poly"]
+
+
+
+
+
+
+
+
+
+
 
 
 
